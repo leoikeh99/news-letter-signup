@@ -1,0 +1,308 @@
+:root {
+  --clr-primary-300: hsla(243, 28%, 13%, 0.25);
+  --clr-primary-350: hsla(234, 29%, 20%, 0.5);
+  --clr-primary-400: hsla(234, 17%, 26%, 1);
+  --clr-primary-500: hsla(234, 29%, 20%, 1);
+
+  --clr-accent-300: rgb(247, 119, 109);
+  --clr-accent-gradient: linear-gradient(204.47deg, #ff6a3a 0%, #ff527b 100%);
+
+  --clr-danger-500: rgb(231, 90, 80);
+  --clr-danger-200: rgba(231, 90, 80, 0.16);
+
+  --clr-neutral-100: hsla(0, 0%, 100%, 1);
+
+  --ff-primary: "Roboto Flex", sans-serif;
+  --ff-body: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 800;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 2.7rem;
+  --fs-600: 3.5rem;
+
+  --fs-heading: clamp(2rem, 9.5vw, var(--fs-500));
+}
+
+@media (min-width: 26em) {
+  :root {
+    --fs-heading: clamp(2.6rem, 4vw, var(--fs-600));
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: grid;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*Utility classes */
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+.text-primary-500 {
+  color: var(--clr-primary-500);
+}
+.text-accent-300 {
+  color: var(--clr-accent-300);
+}
+.text-danger-500 {
+  color: var(--clr-danger-500);
+}
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+.bg-primary-500 {
+  background-color: var(--clr-primary-500);
+}
+.bg-danger-500 {
+  background-color: var(--clr-danger-500);
+}
+.bg-danger-200 {
+  background-color: var(--clr-danger-200);
+}
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+.bg-accent-300 {
+  background-color: var(--clr-accent-300);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+}
+.fs-label {
+  font-size: var(--fs-300);
+}
+
+.grid-flow {
+  display: grid;
+  gap: 24px;
+}
+
+.space-out {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  background-color: var(--clr-primary-400);
+}
+
+.card {
+  background-color: var(--clr-neutral-100);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 26.813rem;
+  min-height: 100vh;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+
+.card__illustration {
+  background: var(--clr-accent-gradient);
+  border-radius: 0 0 16px 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__content {
+  padding-inline: 2rem;
+}
+
+@media (min-width: 43.75em) {
+  .card {
+    flex-direction: row-reverse;
+    max-width: min(100%, 97vw);
+    gap: 0;
+    border-radius: 36px;
+    padding: 1.5rem;
+    min-height: fit-content;
+  }
+  .card__illustration {
+    border-radius: 16px;
+    max-width: 400px;
+    display: grid;
+    place-items: center;
+  }
+  .card__content {
+    padding-right: clamp(2rem, 5vw, 4rem);
+    padding-top: 4.8rem;
+    padding-bottom: 3.688rem;
+  }
+}
+
+.card__form {
+  margin-top: 40px;
+}
+
+.card__formInput {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--clr-primary-300);
+  border-radius: 8px;
+  width: 100%;
+  color: var(--clr-primary-500);
+  font-weight: 500;
+}
+
+.card__formInput::placeholder {
+  color: var(--clr-primary-350);
+}
+
+.card__formInput--error {
+  border-color: var(--clr-danger-500);
+  background-color: var(--clr-danger-200);
+  color: var(--clr-danger-500);
+}
+
+.card__listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.finalCard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-inline: 1.5rem;
+  padding-bottom: 3rem;
+  padding-top: clamp(3rem, 17vh, 8rem);
+}
+
+@media (min-width: 32.25em) {
+  .finalCard {
+    max-width: min(515px, 97vw);
+    min-height: 100%;
+    padding: 3rem;
+    border-radius: 36px;
+  }
+}
+
+.button {
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-primary-500);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--clr-accent-gradient);
+}

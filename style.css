@@ -221,7 +221,7 @@ body {
 @media (min-width: 43.75em) {
   .card {
     flex-direction: row-reverse;
-    max-width: min(100%, 97vw);
+    max-width: min(58rem, 97vw);
     gap: 0;
     border-radius: 36px;
     padding: 1.5rem;

@@ -68,11 +68,11 @@
                     class="text-primary-500 fs-label fw-bold"
                     >Email address</label
                   >
-                  <label
-                    class="hide text-danger-500 fs-label fw-bold"
+                  <p
+                    class="text-danger-500 fs-label fw-bold"
                     id="emailErrorLabel"
-                    for="emailInput"
-                  ></label>
+                    aria-live="polite"
+                  ></p>
                 </div>
                 <input
                   class="card__formInput | fw-regular"
@@ -80,6 +80,7 @@
                   name="email"
                   id="emailInput"
                   placeholder="email@company.com"
+                  aria-describedby="emailErrorLabel"
                 />
               </div>
               <button class="button">Subscribe to monthly newsletter</button>
